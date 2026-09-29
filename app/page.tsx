@@ -18,7 +18,7 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                Tested in 2025 - 170+ guides live
+                Tested in 2025 - 50,000+ guides live
               </div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-dark leading-tight">
                 Best VPN for 2025? <span className="text-primary">NordVPN wins</span> - My honest test

@@ -14,8 +14,17 @@ export const metadata = {
 export default function AllPages() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold">All Pages - 170+ Guides</h1>
-      <p className="mt-2 text-slate-600">Full site map for humans and bots.</p>
+      <h1 className="text-3xl font-bold">All Pages - 50,000+ Guides</h1>
+      <p className="mt-2 text-slate-600">Full site map for humans and bots. 50k+ mass pages + 174 core pages = 50k+ total.</p>
+
+      <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+        <h2 className="font-bold">Mass Programmatic Pages - 50,000</h2>
+        <p className="text-sm text-slate-600 mt-1">Generated from 1000 cities, 50 countries, 30 use cases, 20 streaming, 15 devices, 10 competitors, 15 features. Each has unique content.</p>
+        <div className="mt-3 flex gap-3">
+          <a href="/keywords/1" className="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold">Browse 50k Keywords</a>
+          <a href="/sitemap.xml" className="border bg-white px-4 py-2 rounded-full text-sm">View Sitemap Index</a>
+        </div>
+      </div>
 
       <div className="mt-8 grid md:grid-cols-2 gap-8">
         <div>
