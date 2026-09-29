@@ -1,5 +1,8 @@
 # Deploy to Vercel - Free Hosting
 
+> Deploying to Render instead? See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md). The
+> short version: use a **Web Service**, not a Static Site.
+
 This site is 100% Vercel ready.
 
 ## Steps
@@ -15,10 +18,17 @@ This site is 100% Vercel ready.
 
 ## Env Vars
 
-None need. Affiliate link is hard coded in `lib/constants.ts`:
-`https://nordvpn.sjv.io/Dym2Wa`
+Set **`NEXT_PUBLIC_SITE_URL`** to your live domain (Project → Settings →
+Environment Variables), then redeploy. Example: `https://your-app.vercel.app`.
 
-To change link, edit that file.
+This drives the sitemap index, the 11 sitemap chunks, `robots.txt` and the
+canonical tags. Without it those URLs fall back to the placeholder
+`https://vpnsite.vercel.app`, and Google rejects sitemap entries for a domain
+other than the one serving them. If it is not set we fall back to Vercel's own
+`VERCEL_PROJECT_PRODUCTION_URL` / `VERCEL_URL` before the placeholder.
+
+The affiliate link is hard coded in `lib/constants.ts`:
+`https://nordvpn.sjv.io/Dym2Wa`. To change it, edit that file.
 
 ## Domain
 
@@ -33,7 +43,7 @@ Vercel gives free domain like `vpn-xxx.vercel.app`. You can add custom domain in
 
 ## Max Pages
 
-Current build - 174 SSG pages + 105 rewrite URLs = 278 URLs in sitemap
+Build produces 278 pre-built pages; the other ~50,000 render on demand via ISR.
 
 - `/best-vpn-for/[slug]` - 30 pages
 - `/vpn-for/[slug]` - 65 pages (50 countries + 15 devices)
@@ -42,9 +52,13 @@ Current build - 174 SSG pages + 105 rewrite URLs = 278 URLs in sitemap
 - `/features/[slug]` - 15 pages
 - `/guides/[slug]` - 20 pages
 - Static - 9 pages
-- Rewrites - `/best-vpn-for-:slug` etc map to nested routes
+- `/keywords/[page]` - 5 pre-built of 100
+- `/[slug]` - 100 pre-built of 50,000
 
-Add more data in `lib/data/*.ts` to get more pages - just add entry, rebuild, done.
+Flat aliases (`/best-vpn-for-streaming`) are 308-redirects defined in
+`next.config.js`, generated from the real slug lists.
+
+Add more data in `lib/data/*.ts` to get more pages - just add an entry, rebuild, done.
 
 ## Performance
 

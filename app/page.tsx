@@ -66,7 +66,7 @@ export default function Home() {
                 <div className="text-xs text-slate-500">Best deal today</div>
                 <div className="font-bold">2-year plan + 3 months free</div>
                 <div className="text-sm text-slate-600">$3.09/mo - 68% off</div>
-                <a href={AFFILIATE_LINK} target="_blank" className="mt-3 block text-center bg-primary text-white py-2 rounded-full font-bold">Claim Deal</a>
+                <a href={AFFILIATE_LINK} target="_blank" rel="nofollow sponsored" className="mt-3 block text-center bg-primary text-white py-2 rounded-full font-bold">Claim Deal</a>
               </div>
             </div>
           </div>

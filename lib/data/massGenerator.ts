@@ -223,12 +223,14 @@ export function generateMassKeywords(limit = 50000): MassKeyword[] {
   while (keywords.length < limit) {
     const city = cities[idx % cities.length];
     const uc = useCases[idx % useCases.length];
-    const country = countries[idx % countries.length];
     const year = years[idx % years.length];
+    // Use the city's own country. Pairing a city with a cycling, unrelated
+    // country produced pages like "VPN for Streaming in Yuen Long, Belgium".
+    const cityCountry = city.country;
     const variations = [
       `best vpn for ${uc.title} in ${city.name} ${year}`,
       `nordvpn for ${city.name} ${uc.title} ${year}`,
-      `vpn for ${uc.title} in ${city.name} ${country.full}`,
+      `vpn for ${uc.title} in ${city.name} ${cityCountry}`,
       `is nordvpn good for ${city.name} ${uc.title}`,
       `how to use vpn in ${city.name} for ${uc.title}`,
       `best free vpn alternative for ${uc.title} in ${city.name}`,
@@ -237,7 +239,7 @@ export function generateMassKeywords(limit = 50000): MassKeyword[] {
     ];
     for (const v of variations) {
       if (keywords.length >= limit) break;
-      add(v, "mass_fill", { city: city.name, useCase: uc.title, country: country.full, year });
+      add(v, "mass_fill", { city: city.name, useCase: uc.title, country: cityCountry, year });
     }
     idx++;
     if (idx > 100000) break; // safety
