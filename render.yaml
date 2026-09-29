@@ -1,0 +1,31 @@
+# Render Blueprint - https://render.com/docs/blueprint-spec
+#
+# Deploys as a WEB SERVICE (not a Static Site). The earlier "Publish directory
+# VPN Scout does not exist" error came from Render being told this was a Static
+# Site: the Next.js app has no static publish folder, it must be served by
+# `next start`.
+#
+# In Render: New + -> Blueprint -> pick this repo. Render reads this file.
+
+services:
+  - type: web
+    name: vpn-scout
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.1
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # Set this in the Render dashboard to the domain you actually serve.
+      # Sitemaps, robots.txt and canonicals are built from it, so it must match
+      # the live domain or Google will reject the sitemap as cross-domain.
+      # Example: https://vpn-scout.onrender.com  (or your custom domain)
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false

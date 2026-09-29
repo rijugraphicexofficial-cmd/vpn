@@ -43,7 +43,7 @@ export default function Header() {
             <Link href="/vpn-for-usa" className="block">Countries</Link>
             <Link href="/vpn-for-windows" className="block">Devices</Link>
             <Link href="/streaming/netflix" className="block">Netflix Guide</Link>
-            <a href={AFFILIATE_LINK} className="block bg-primary text-white text-center py-2 rounded-full">Get NordVPN Deal</a>
+            <a href={AFFILIATE_LINK} target="_blank" rel="nofollow sponsored" className="block bg-primary text-white text-center py-2 rounded-full">Get NordVPN Deal</a>
           </div>
         )}
       </div>

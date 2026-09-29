@@ -7,6 +7,11 @@ import ProsCons from "@/components/ProsCons";
 import { AFFILIATE_LINK, SITE_NAME } from "@/lib/constants";
 import type { Metadata } from "next";
 
+// Note: flat core aliases like "/best-vpn-for-streaming" are 308-redirected to
+// their nested canonical URL by the `redirects()` block in next.config.js.
+// They must not be handled here - a wildcard match on this route is what broke
+// 23,370 mass pages (see the comment in next.config.js).
+
 export const dynamicParams = true;
 // Do not pre-build 50k at build time - on-demand ISR
 export const revalidate = 86400; // cache 24h

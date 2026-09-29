@@ -26,7 +26,7 @@ export default function PricingPage() {
             <li>No logs - 4 audits</li>
             <li>30-day money back</li>
           </ul>
-          <a href={AFFILIATE_LINK} target="_blank" className="mt-6 block bg-primary text-white text-center py-3 rounded-full font-bold">Get Standard Deal</a>
+          <a href={AFFILIATE_LINK} target="_blank" rel="nofollow sponsored" className="mt-6 block bg-primary text-white text-center py-3 rounded-full font-bold">Get Standard Deal</a>
         </div>
 
         <div className="border rounded-xl p-6 bg-white">
@@ -39,7 +39,7 @@ export default function PricingPage() {
             <li>Threat Protection Pro</li>
             <li>Data breach scan</li>
           </ul>
-          <a href={AFFILIATE_LINK} target="_blank" className="mt-6 block border text-center py-3 rounded-full font-bold">Get Plus Deal</a>
+          <a href={AFFILIATE_LINK} target="_blank" rel="nofollow sponsored" className="mt-6 block border text-center py-3 rounded-full font-bold">Get Plus Deal</a>
         </div>
 
         <div className="border rounded-xl p-6 bg-white">
@@ -52,7 +52,7 @@ export default function PricingPage() {
             <li>Safe file lock</li>
             <li>All Nord tools in one</li>
           </ul>
-          <a href={AFFILIATE_LINK} target="_blank" className="mt-6 block border text-center py-3 rounded-full font-bold">Get Complete Deal</a>
+          <a href={AFFILIATE_LINK} target="_blank" rel="nofollow sponsored" className="mt-6 block border text-center py-3 rounded-full font-bold">Get Complete Deal</a>
         </div>
       </div>
 
