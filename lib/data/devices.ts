@@ -1,0 +1,17 @@
+export const devices = [
+  { slug: "windows", name: "Windows", icon: "💻" },
+  { slug: "mac", name: "Mac", icon: "🍎" },
+  { slug: "iphone", name: "iPhone", icon: "📱" },
+  { slug: "ipad", name: "iPad", icon: "📱" },
+  { slug: "android", name: "Android", icon: "🤖" },
+  { slug: "linux", name: "Linux", icon: "🐧" },
+  { slug: "firestick", name: "Firestick", icon: "🔥" },
+  { slug: "apple-tv", name: "Apple TV", icon: "📺" },
+  { slug: "smart-tv", name: "Smart TV", icon: "📺" },
+  { slug: "router", name: "Router", icon: "📡" },
+  { slug: "chromebook", name: "Chromebook", icon: "💻" },
+  { slug: "xbox", name: "Xbox", icon: "🎮" },
+  { slug: "playstation", name: "PlayStation", icon: "🎮" },
+  { slug: "chrome-extension", name: "Chrome Extension", icon: "🧩" },
+  { slug: "firefox-extension", name: "Firefox Extension", icon: "🦊" },
+];
